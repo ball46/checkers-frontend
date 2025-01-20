@@ -89,10 +89,17 @@ export const GameBoard = ({ gameId }: GameBoardProps) => {
                 w-[80%] h-[80%] rounded-full
                 ${cell.piece.color === 'Black' ? 'bg-piece-black' : 'bg-piece-white'}
                 ${cell.piece.color === 'Black' ? 'border-2 border-white' : 'border-2 border-black'}
-                ${cell.piece.isKing ? 'ring-2 ring-yellow-400' : ''}
-                transition-all duration-200
-                hover:scale-105
-              `} />
+                flex items-center justify-center
+              `}>
+                {cell.piece.isKing && (
+                  <span className={`
+                    text-2xl
+                    ${cell.piece.color === 'Black' ? 'text-white' : 'text-black'}
+                  `}>
+                    👑
+                  </span>
+                )}
+              </div>
             )}
           </div>
         );
