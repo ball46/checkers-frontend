@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Checkers Game
+
+A modern web-based implementation of the classic Checkers board game built with Next.js, TypeScript, and Tailwind CSS.
+
+## Overview
+
+This application provides a full-featured Checkers gaming experience with a responsive interface. Players can create games, join existing ones, and enjoy the classic board game with standard rules including king promotion and mandatory captures.
+
+## Features
+
+* **Game Creation**: Create new games with custom names
+* **Real-time Updates**: Automatic game state synchronization
+* **Interactive Board**: Visual highlighting of selected pieces and valid moves
+* **Game Status Tracking**: Monitor current player turn and game outcome
+* **Responsive Design**: Play on any device with a clean, adaptive interface
+
+## Tech Stack
+
+* **Next.js**: React framework for server-rendered applications
+* **TypeScript**: Type-safe JavaScript
+* **Tailwind CSS**: Utility-first CSS framework
+* **Axios**: Promise-based HTTP client
+
+## Architecture
+
+The application follows a clean, component-based architecture:
+
+### Core Components
+
+* **Game Board**: Interactive checkers board with piece movement logic
+* **Game Controls**: UI controls for game management (forfeit, restart)
+* **Game Status**: Real-time display of game state and current player
+
+### API Integration
+
+* RESTful API client for game state management
+* Automatic polling for game state updates
+* Error handling and loading states
+
+## Project Structure
+
+```
+src/
+├── api/         # API client for game operations
+├── app/         # Next.js app directory with page components
+├── components/  # Reusable UI components
+│   ├── common/  # General UI components
+│   ├── game/    # Game-specific components
+│   └── home/    # Home page components
+├── lib/         # Utility libraries
+├── types/       # TypeScript type definitions
+└── utils/       # Helper functions
+```
+
+## Game Flow
+
+1. **Home Page**: Create a new game or join an existing one
+2. **Game Page**: Interactive board to play the game
+3. **Game Over**: Modal with game results and option to return home
+
+## Related Repositories
+
+* **Backend**: [Checkers Game Backend](https://github.com/ball46/checkers-game) - The backend service that powers this application's game logic and API
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up environment variables in `.env.local`:
+   ```
+   NEXT_PUBLIC_API_URL=your_api_url_here
+   ```
+4. Run the development server: `npm run dev`
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Screenshots
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Here are some screenshots of the application:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Home Screen](/public/images/home-screen.png)
+*Home screen with game creation and list*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Game Board](/public/images/game-board.png)
+*The main game board with pieces*
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Game Over](/public/images/game-over.png)
+*Game over screen showing the result*
